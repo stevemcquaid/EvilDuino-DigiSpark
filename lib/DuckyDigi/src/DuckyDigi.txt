@@ -1,0 +1,66 @@
+// Interface for Ducky Wrapper of DigiKeyboard
+#ifndef __DuckyDigi_h__
+#define __DuckyDigi_h__
+
+#include <stdlib.h>
+
+class DuckyDigi {
+public:
+  DuckyDigi();
+  void setup();
+  void setupLED();
+  void ledOn();
+  void ledOff();
+  void wait(int ms);
+  void println(char* input);
+
+  //make these able to accept csv/dynamic paprams
+  void GUI(char key); // windows key
+  void SHIFT(char key); // SHIFT | DELETE, HOME, INSERT, PAGEUP, PAGEDOWN, WINDOWS, GUI, UPARROW, DOWNARROW, LEFTARROW, RIGHTARROW, TAB
+  void CMD(char key);
+  void CTRL(char key); // CONTROL | BREAK, PAUSE, F1...F12, ESCAPE, ESC, Single Char | | CTRL | BREAK, PAUSE, F1...F12, ESCAPE, ESC, Single Char
+  void ALT(char key); // ALT | END, ESC, ESCAPE, F1..F12, Single, Char, SPACE, TAB
+
+  // Arrow Keys
+  void DOWNARROW();
+  void LEFTARROW();
+  void RIGHTARROW();
+  void UPARROW();
+
+  // Control
+  void DEFAULT_DELAY(int ms); // should set the default value for DELAY() function
+  void DELAY(); //default to 10ms
+  void DELAY(int ms);
+  void STRING(char* input);
+  void PRINT(char* input); // alias to STRING
+  void PRINTLN(char* input); // alias to STRING + ENTER()
+  void ENTER();
+
+  // Extended Commands
+  void PAUSE();
+  void CAPSLOCK();
+  void DELETE();
+  void END();
+  void ESC();
+  void HOME();
+  void INSERT();
+  void NUMLOCK();
+  void PAGEUP();
+  void PAGEDOWN();
+  void PRINTSCREEN();
+  void SCROLLOCK();
+  void SPACE();
+  void TAB();
+
+  // Alias
+  void WINDOWS(char key); //alias to GUI
+  void CONTROL(char key); //alias to CTRL
+  void DOWN(); // alias to arrow
+  void LEFT(); // alias to arrow
+  void RIGHT(); // alias to arrow
+  void UP(); // alias to arrow
+  void ESCAPE(); // alias to ESC
+
+};
+
+#endif

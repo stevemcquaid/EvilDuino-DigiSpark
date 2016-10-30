@@ -1,0 +1,10 @@
+{
+    "description": "Micronucleus",
+    "name": "tool-micronucleus",
+    "system": [
+        "darwin_x86_64",
+        "darwin_i386"
+    ],
+    "url": "https://github.com/micronucleus/micronucleus",
+    "version": "1.200.0"
+}
